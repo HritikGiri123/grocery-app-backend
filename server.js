@@ -23,11 +23,11 @@ await connectCloudinary()
 
 //allow multiple origin
 const allowedorigins = ["http://localhost:5174"];
-<<<<<<< HEAD
+
 addAddressRouter.post('/stripe',express.raw({type:application/json}),stripeWebhooks)
-=======
+
 addAddressRouter.post('/stripe', express.raw({ type: application / json }), stripeWebhooks)
->>>>>>> a29e353 (final commit)
+
 
 //middleware configuration
 app.use(express.json());
