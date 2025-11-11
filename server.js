@@ -22,8 +22,8 @@ await connectDB()
 await connectCloudinary()
 
 //allow multiple origin
-const allowedorigins = ["https://grocery-app-backend-new.vercel.app/", "http://localhost:5173", "http://localhost:4000"];
-
+const origins = ["http://localhost:5173", "http://localhost:4000"];
+const allowedorigins = process.env.NODE_ENV === "development" ? origins : [process.env.PROD_URL];
 addAddressRouter.post('/stripe',express.raw({type:application/json}),stripeWebhooks)
 
 addAddressRouter.post('/stripe', express.raw({ type: application / json }), stripeWebhooks)
